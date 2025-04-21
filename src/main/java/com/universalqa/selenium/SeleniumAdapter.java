@@ -6,21 +6,22 @@ import com.universalqa.utils.LoggerUtil;
 import com.universalqa.utils.RetryUtil;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 public class SeleniumAdapter implements DriverAdapter {
-    private WebDriver driver;
+
+    private final WebDriver driver;
     private static final Logger logger = LoggerUtil.getLogger(SeleniumAdapter.class);
     private static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(10);
 
-    public SeleniumAdapter() {
-        driver = new ChromeDriver();
+    public SeleniumAdapter(WebDriver driver) {
+        this.driver = driver;
     }
 
+    @Override
     public void click(String locator) {
         RetryUtil.retry(() -> {
             By by = LocatorStrategy.resolve(locator);
@@ -31,6 +32,7 @@ public class SeleniumAdapter implements DriverAdapter {
         }, "click", locator, logger);
     }
 
+    @Override
     public void sendInput(String locator, String text) {
         RetryUtil.retry(() -> {
             By by = LocatorStrategy.resolve(locator);
@@ -42,6 +44,7 @@ public class SeleniumAdapter implements DriverAdapter {
         }, "type", locator, logger);
     }
 
+    @Override
     public boolean isElementDisplayed(String locator) {
         try {
             By by = LocatorStrategy.resolve(locator);
@@ -53,6 +56,7 @@ public class SeleniumAdapter implements DriverAdapter {
         }
     }
 
+    @Override
     public String getElementText(String locator) {
         By by = LocatorStrategy.resolve(locator);
         WebElement element = new WebDriverWait(driver, DEFAULT_TIMEOUT)
@@ -60,6 +64,7 @@ public class SeleniumAdapter implements DriverAdapter {
         return element.getText();
     }
 
+    @Override
     public String getElementAttribute(String locator, String attribute) {
         By by = LocatorStrategy.resolve(locator);
         WebElement element = new WebDriverWait(driver, DEFAULT_TIMEOUT)
@@ -67,6 +72,7 @@ public class SeleniumAdapter implements DriverAdapter {
         return element.getAttribute(attribute);
     }
 
+    @Override
     public void quit() {
         driver.quit();
     }

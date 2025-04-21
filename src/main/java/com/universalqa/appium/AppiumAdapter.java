@@ -4,24 +4,23 @@ import com.universalqa.core.DriverAdapter;
 import com.universalqa.utils.LocatorStrategy;
 import com.universalqa.utils.LoggerUtil;
 import com.universalqa.utils.RetryUtil;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.net.URL;
 import java.time.Duration;
 
 public class AppiumAdapter implements DriverAdapter {
-    private AndroidDriver driver;
+
+    private final AppiumDriver driver;
     private static final Logger logger = LoggerUtil.getLogger(AppiumAdapter.class);
     private static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(10);
 
-    public AppiumAdapter(URL serverUrl, DesiredCapabilities caps) {
-        driver = new AndroidDriver(serverUrl, caps);
+    public AppiumAdapter(AppiumDriver driver) {
+        this.driver = driver;
     }
 
     public void click(String locator) {
