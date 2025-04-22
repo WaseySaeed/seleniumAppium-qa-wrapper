@@ -72,6 +72,25 @@ public class SeleniumAdapter implements DriverAdapter {
         return element.getAttribute(attribute);
     }
 
+    public void clearFieldWithBackspace(String locator) {
+        RetryUtil.retry(() -> {
+            By by = LocatorStrategy.resolve(locator);
+            WebElement element = new WebDriverWait(driver, DEFAULT_TIMEOUT)
+                    .until(ExpectedConditions.visibilityOfElementLocated(by));
+
+            String value = element.getAttribute("value");
+            if (value == null || value.isEmpty()) {
+                value = element.getAttribute("text");
+            }
+
+            element.click();
+            for (int i = 0; i < value.length(); i++) {
+                element.sendKeys(Keys.BACK_SPACE);
+            }
+            return null;
+        }, "clearFieldWithBackspace", locator, logger);
+    }
+
     @Override
     public void quit() {
         driver.quit();

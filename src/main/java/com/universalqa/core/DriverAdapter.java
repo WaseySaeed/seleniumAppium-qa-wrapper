@@ -6,5 +6,6 @@ public interface DriverAdapter {
         boolean isElementDisplayed(String locator);
         String getElementText(String locator);
         String getElementAttribute(String locator, String attribute);
+        void clearFieldWithBackspace(String locator);
         void quit();
 }

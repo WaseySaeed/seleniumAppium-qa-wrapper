@@ -7,6 +7,7 @@ import com.universalqa.utils.RetryUtil;
 import io.appium.java_client.AppiumDriver;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -67,6 +68,25 @@ public class AppiumAdapter implements DriverAdapter {
         WebElement element = new WebDriverWait(driver, DEFAULT_TIMEOUT)
                 .until(ExpectedConditions.visibilityOfElementLocated(by));
         return element.getAttribute(attribute);
+    }
+
+    public void clearFieldWithBackspace(String locator) {
+        RetryUtil.retry(() -> {
+            By by = LocatorStrategy.resolve(locator);
+            WebElement element = new WebDriverWait(driver, DEFAULT_TIMEOUT)
+                    .until(ExpectedConditions.visibilityOfElementLocated(by));
+
+            String value = element.getAttribute("value");
+            if (value == null || value.isEmpty()) {
+                value = element.getAttribute("text");
+            }
+
+            element.click();
+            for (int i = 0; i < value.length(); i++) {
+                element.sendKeys(Keys.BACK_SPACE);
+            }
+            return null;
+        }, "clearFieldWithBackspace", locator, logger);
     }
 
     public void quit() {

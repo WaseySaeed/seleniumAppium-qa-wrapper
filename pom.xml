@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.universalqa</groupId>
     <artifactId>universal-qa-wrapper</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
     <name>Universal QA Wrapper</name>
 
@@ -16,31 +16,35 @@
     </distributionManagement>
 
     <dependencies>
-        <!-- Selenium -->
+        <!-- Selenium (provided by consumer) -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.29.0</version>
+            <scope>provided</scope>
         </dependency>
 
-        <!-- Appium -->
+        <!-- Appium (provided by consumer) -->
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>8.5.1</version>
+            <scope>provided</scope>
         </dependency>
 
+        <!-- Log4j (provided so it doesn’t conflict with existing logger) -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.20.0</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
             <version>2.20.0</version>
+            <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <build>
