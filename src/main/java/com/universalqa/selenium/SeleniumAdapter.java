@@ -46,14 +46,12 @@ public class SeleniumAdapter implements DriverAdapter {
 
     @Override
     public boolean isElementDisplayed(String locator) {
-        try {
+        return RetryUtil.retry(() -> {
             By by = LocatorStrategy.resolve(locator);
             WebElement element = new WebDriverWait(driver, DEFAULT_TIMEOUT)
                     .until(ExpectedConditions.visibilityOfElementLocated(by));
             return element.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+        }, "isElementDisplayed", locator, logger);
     }
 
     @Override
@@ -89,6 +87,19 @@ public class SeleniumAdapter implements DriverAdapter {
             }
             return null;
         }, "clearFieldWithBackspace", locator, logger);
+    }
+
+    @Override
+    public boolean waitForVisible(String locator) {
+        try {
+            By by = LocatorStrategy.resolve(locator);
+            new WebDriverWait(driver, DEFAULT_TIMEOUT)
+                    .until(ExpectedConditions.visibilityOfElementLocated(by));
+            return true;
+        } catch (Exception e) {
+            logger.warn("Element not visible: " + locator);
+            return false;
+        }
     }
 
     @Override

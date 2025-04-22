@@ -7,5 +7,6 @@ public interface DriverAdapter {
         String getElementText(String locator);
         String getElementAttribute(String locator, String attribute);
         void clearFieldWithBackspace(String locator);
+        boolean waitForVisible(String locator);
         void quit();
 }
