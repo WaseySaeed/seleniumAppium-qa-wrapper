@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.waseysaeed</groupId>
+        <groupId>io.github.waseysaeed</groupId>
     <artifactId>universal-qa-wrapper</artifactId>
     <version>1.0.6</version>
     <packaging>jar</packaging>
@@ -33,7 +33,7 @@
         </developer>
     </developers>
 
-    <!--<distributionManagement>
+    <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
@@ -42,7 +42,8 @@
             <id>ossrh</id>
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-    </distributionManagement> -->
+    </distributionManagement>
+
 
     <dependencies>
         <dependency>
@@ -92,7 +93,7 @@
         </pluginRepository>
     </pluginRepositories>
 
-   <!-- <profiles>
+    <profiles>
         <profile>
             <id>release</id>
             <build>
@@ -114,5 +115,5 @@
                 </plugins>
             </build>
         </profile>
-    </profiles> -->
+    </profiles>
 </project>
