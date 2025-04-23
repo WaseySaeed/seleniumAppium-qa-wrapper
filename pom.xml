@@ -5,7 +5,7 @@
 
         <groupId>io.github.waseysaeed</groupId>
     <artifactId>universal-qa-wrapper</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <packaging>jar</packaging>
     <name>Universal QA Wrapper</name>
     <description>Reusable QA Automation Library for Selenium and Appium</description>
