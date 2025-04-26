@@ -4,14 +4,14 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.universalqa</groupId> <!-- You can change this if needed -->
-    <artifactId>universal-qa-wrapper</artifactId>
-    <version>1.0.10</version>
+    <groupId>com.universalqa</groupId> <!-- You can keep it like this or adjust -->
+    <artifactId>seleniumAppium-qa-wrapper</artifactId>
+    <version>1.0.8</version>
     <packaging>jar</packaging>
 
-    <name>Universal QA Wrapper</name>
-    <description>Reusable QA Automation Library for Selenium and Appium</description>
-    <url>https://github.com/WaseySaeed/universal-qa-wrapper</url>
+    <name>Selenium Appium QA Wrapper</name>
+    <description>Reusable QA Automation Library for Selenium and Appium. Easy Plug and Play!</description>
+    <url>https://github.com/WaseySaeed/seleniumAppium-qa-wrapper</url>
 
     <licenses>
         <license>
@@ -22,9 +22,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/WaseySaeed/universal-qa-wrapper</url>
-        <connection>scm:git:git://github.com/WaseySaeed/universal-qa-wrapper.git</connection>
-        <developerConnection>scm:git:ssh://github.com:WaseySaeed/universal-qa-wrapper.git</developerConnection>
+        <url>https://github.com/WaseySaeed/seleniumAppium-qa-wrapper</url>
+        <connection>scm:git:git://github.com/WaseySaeed/seleniumAppium-qa-wrapper.git</connection>
+        <developerConnection>scm:git:ssh://github.com:WaseySaeed/seleniumAppium-qa-wrapper.git</developerConnection>
     </scm>
 
     <developers>
