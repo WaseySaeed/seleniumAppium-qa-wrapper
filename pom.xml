@@ -6,7 +6,7 @@
 
     <groupId>com.universalqa</groupId> <!-- You can keep it like this or adjust -->
     <artifactId>seleniumAppium-qa-wrapper</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.10</version>
     <packaging>jar</packaging>
 
     <name>Selenium Appium QA Wrapper</name>
