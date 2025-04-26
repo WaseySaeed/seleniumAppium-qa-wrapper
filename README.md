@@ -1,8 +1,7 @@
-# 🔧 Universal QA Automation Wrapper Library
+# 🔧 SeleniumAppium QA Wrapper Library
 
-A lightweight, reusable Java library for UI automation that abstracts common interactions like `click`, `type`, `getText`, and `waitForVisible`.  
-Supports **Selenium** and **Appium**, and works with **any framework** by accepting external driver instances — so you stay in control.
-
+A lightweight, reusable Java library for UI automation that abstracts common interactions like click, sendInput, getText, and waitForVisible.
+Supports Selenium and Appium, and works with any framework by accepting external driver instances — so you stay in control.
 ---
 
 ## 🚀 Features
@@ -10,7 +9,7 @@ Supports **Selenium** and **Appium**, and works with **any framework** by accept
 - ✅ Easy-to-use `DriverAdapter` interface
 - ✅ Built-in retry logic for flaky elements
 - ✅ Smart locator parsing (`id=`, `xpath=`, `accessibilityId=`, etc.)
-- ✅ Compatible with Selenium and Appium
+- ✅ Compatible with Selenium and Appium(Android)
 - ✅ Requires no changes to your driver or framework
 - ✅ Logging support via Log4j
 - ✅ Zero version conflicts (`provided` dependencies)
@@ -19,24 +18,24 @@ Supports **Selenium** and **Appium**, and works with **any framework** by accept
 
 ## 🛠 How to Use
 
-### 1. Add Dependency (GitHub Packages)
+### 1. Add Dependency (via JitPack)
 
 In your `pom.xml`:
 
 ```xml
 <repositories>
-  <repository>
-    <id>github</id>
-    <url>https://maven.pkg.github.com/WaseySaeed/universal-qa-wrapper</url>
-  </repository>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
 </repositories>
 
 <dependencies>
-  <dependency>
-    <groupId>com.universalqa</groupId>
-    <artifactId>universal-qa-wrapper</artifactId>
-    <version>1.0.4</version>
-  </dependency>
+<dependency>
+    <groupId>com.github.WaseySaeed</groupId>
+    <artifactId>seleniumAppium-qa-wrapper</artifactId>
+    <version>TAG_VERSION</version> <!-- Example: 1.0.8 current version 1.0.10 -->
+</dependency>
 </dependencies>
 ```
 
@@ -125,3 +124,14 @@ driver.type("id=email", "test@example.com");
 driver.type("id=password", "password123");
 driver.click("id=loginBtn");
 ```
+
+### 7. 🙌 Why Use SeleniumAppium QA Wrapper?
+1. 🚀 Boost your automation speed
+2. ⚡ Remove boilerplate code
+3. 🎯 Use in any framework instantly
+4. 🔥 Battle-tested with retries and locator flexibility
+
+
+### 🚀 Ready to simplify your automation?
+⭐ Star the repo!
+👨‍💻 Contributions welcome!
