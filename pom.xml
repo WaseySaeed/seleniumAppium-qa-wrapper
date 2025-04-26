@@ -3,13 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.github.waseysaeed</groupId>
-    <artifactId>seleniumAppium-qa-wrapper</artifactId>
+
+    <groupId>com.universalqa</groupId> <!-- You can change this if needed -->
+    <artifactId>universal-qa-wrapper</artifactId>
     <version>1.0.8</version>
     <packaging>jar</packaging>
+
     <name>Universal QA Wrapper</name>
     <description>Reusable QA Automation Library for Selenium and Appium</description>
-    <url>https://github.com/WaseySaeed/seleniumAppium-qa-wrapper</url>
+    <url>https://github.com/WaseySaeed/universal-qa-wrapper</url>
 
     <licenses>
         <license>
@@ -20,9 +22,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/WaseySaeed/seleniumAppium-qa-wrapper</url>
-        <connection>scm:git:git://github.com/WaseySaeed/seleniumAppium-qa-wrapper.git</connection>
-        <developerConnection>scm:git:ssh://github.com:WaseySaeed/seleniumAppium-qa-wrapper.git</developerConnection>
+        <url>https://github.com/WaseySaeed/universal-qa-wrapper</url>
+        <connection>scm:git:git://github.com/WaseySaeed/universal-qa-wrapper.git</connection>
+        <developerConnection>scm:git:ssh://github.com:WaseySaeed/universal-qa-wrapper.git</developerConnection>
     </scm>
 
     <developers>
@@ -33,47 +35,32 @@
         </developer>
     </developers>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.29.0</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>8.5.1</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.20.0</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
             <version>2.20.0</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Compiler Plugin -->
+            <!-- Compile plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -83,56 +70,7 @@
                     <target>11</target>
                 </configuration>
             </plugin>
-
-            <!-- Deploy Plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.1.1</version>
-            </plugin>
-
-            <!-- GPG Plugin (called via 'release' profile) -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
-    <profiles>
-        <profile>
-            <id>release</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
