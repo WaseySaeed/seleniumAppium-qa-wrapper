@@ -135,3 +135,61 @@ driver.click("id=loginBtn");
 ### 🚀 Ready to simplify your automation?
 ⭐ Star the repo!
 👨‍💻 Contributions welcome!
+
+# Contributing to SeleniumAppium-qa-wrapper
+
+First off, thank you for taking the time to contribute! 🎉 This document lays out the steps and guidelines for reporting issues, suggesting features, and submitting pull requests.
+
+---
+## Contributing
+
+### Getting Started
+1. Fork the repository
+2. Set up the development environment by following the instructions in README.md
+3. Create a new branch for your feature or bug fix
+4. Make your changes following the code standards
+5. Write or update tests as necessary
+6. Update documentation as needed
+7. Submit a pull request
+
+### Communication
+- Ask questions if you're unsure about something
+- Discuss significant changes before investing a lot of time
+
+## Issue Management
+
+### Creating Issues
+- Search existing issues before creating a new one
+- Use issue templates when available
+- Provide detailed information to reproduce bugs
+- Include environment details (OS, version, etc.)
+- Label issues appropriately
+
+### Issue Tracking
+- Issues will be triaged by maintainers
+- Priorities will be assigned based on impact and alignment with project goals
+- Feel free to volunteer to work on open issues
+
+## Pull Requests
+
+### PR Guidelines
+- Create one PR per feature or bug fix
+- Reference related issues in the PR description
+- Include tests for new functionality
+- Update documentation as needed
+- Follow the PR template
+
+### PR Process
+1. Submit PR from your fork to the main repository
+2. Maintainers will review your code
+3. Address review feedback
+4. Once approved, a maintainer will merge your changes
+
+## Code Review
+
+### Review Process
+- All code changes require at least one review from a maintainer
+- Reviews focus on:
+   - Code quality and correctness
+   - Documentation
+   - Adherence to project standards
