@@ -1,0 +1,84 @@
+# ------------------------
+# Maven build
+# ------------------------
+/target/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/pom.xml.next
+/release.properties
+
+# Maven Wrapper
+/.mvn/wrapper/maven-wrapper.jar
+/.mvn/wrapper/maven-wrapper.properties
+
+# ------------------------
+# Eclipse
+# ------------------------
+.project
+.classpath
+.settings/
+.metadata/
+bin/
+
+# ------------------------
+# IntelliJ IDEA
+# ------------------------
+# User-specific files
+*.iml
+*.iws
+.idea/
+
+# Gradle wrapper (if accidentally present)
+/gradle/
+/gradlew
+/gradlew.bat
+
+# ------------------------
+# NetBeans
+# ------------------------
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# ------------------------
+# VS Code
+# ------------------------
+.vscode/
+
+# ------------------------
+# OS-specific
+# ------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Icon?
+Icon?
+# Trashes
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ------------------------
+# Logs and Temp files
+# ------------------------
+*.log
+*.tmp
+*.temp
+
+# ------------------------
+# Generated sources (optional)
+# ------------------------
+# If you generate sources (e.g. via JAXB, Lombok delombok), ignore:
+generated-sources/
